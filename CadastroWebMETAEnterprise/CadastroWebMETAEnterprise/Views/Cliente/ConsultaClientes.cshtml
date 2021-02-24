@@ -1,0 +1,44 @@
+﻿@model List<CadastroWebMETAEnterprise.Models.ClienteModel>
+
+
+<h2>Consulta Clientes</h2>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Lista de Clientes</h5>
+                </div>
+                <div class="ibox-content">
+                    <table class="table">
+                        <tr>
+                            <td>Cliente ID</td>
+                            <td>Nome Cliente </td>
+                           
+                            <td>Endereço</td>
+                            <td>Telefone</td>
+                            <td>Criação usuário</td>
+                            <td>menu editar</td>
+                            <td>menu apagar</td>
+                        </tr>
+                        @foreach (var item in Model)
+
+                        {
+                            <tr>
+                                <td>@item.id</td>
+                                <td>@item.nomeCliente</td>
+                               
+                                <td>@item.endereco</td>
+                                <td>@item.telefone</td>
+                                <td>@item.dataCriacao</td>
+                                <td>@Html.ActionLink("Editar Cliente", "EditarCliente", "Cliente", new { id = item.id }, new { @class = "btn btn-warning btn-sm" })</td>
+                                <td>@Html.ActionLink("Deletar Cliente", "DeletarCliente", "Cliente", new { id = item.id }, new { @class = "btn btn-danger btn-sm" })</td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

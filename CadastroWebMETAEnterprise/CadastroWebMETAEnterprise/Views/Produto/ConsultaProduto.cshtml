@@ -1,0 +1,41 @@
+﻿@model List<CadastroWebMETAEnterprise.Models.ProdutoModel>
+
+
+<h2>Consulta Produto</h2>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Lista de Produto</h5>
+                </div>
+                <div class="ibox-content">
+                    <table class="table">
+                        <tr>
+                            <td>Produto ID</td>
+                            <td>Nome Produto </td>
+                            <td>Preço</td>
+                            <td>criação do produto</td>
+                            <td>menu editar</td>
+                            <td>menu apagar</td>
+                        </tr>
+                        @foreach (var item in Model)
+
+                        {
+                            <tr>
+                                <td>@item.id</td>
+                                <td>@item.nomeProduto</td>
+                                <td>@item.preco</td>
+                                <td>@item.dataCriacaoProduto</td>
+                       
+                                <td>@Html.ActionLink("Editar Produto", "EditarProduto", "Produto", new { id = item.id }, new { @class = "btn btn-warning btn-sm" })</td>
+                                <td>@Html.ActionLink("Deletar Produto", "DeletarProduto", "Produto", new { id = item.id }, new { @class = "btn btn-danger btn-sm" })</td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

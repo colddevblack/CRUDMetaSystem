@@ -1,0 +1,69 @@
+﻿<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+                    <img alt="image" class="rounded-circle" src="~/Images/profile_small.jpg" />
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <span class="block m-t-xs font-bold">Fabio Bordin</span>
+                        <span class="text-muted text-xs block">Desenvolvedor C# <b class="caret"></b></span>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight m-t-xs" style="position: absolute; top: 91px; left: 0px; will-change: top, left;">
+                        <li><a class="dropdown-item" href="@Url.Action("Profile", "AppViews")">Profile</a></li>
+                        <li><a class="dropdown-item" href="@Url.Action("Contacts", "AppViews")">Contacts</a></li>
+                        <li><a class="dropdown-item" href="@Url.Action("Inbox", "Mailbox")">Mailbox</a></li>
+                        <li class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="@Url.Action("Login", "Pages")">Logout</a></li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    IN+
+                </div>
+            </li>
+            <li class="@Html.IsSelected(controller: "Cliente")">
+                <a href="@Url.Action("ConsultaClientes", "Cliente")"><i class="fa fa-user-circle-o"></i> <span class="nav-label" data-i18n="nav.dashboard">Menu Clientes</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Cliente", cssClass: "in")">
+                    </a>
+
+                    <li class="@Html.IsSelected(action: "ConsultaClientes")"><a href="@Url.Action("ConsultaClientes", "Cliente")">Consulta/Editar Clientes</a></li>
+                    <li class="@Html.IsSelected(action: "PesquisaClientes")"><a href="@Url.Action("PesquisaClientes", "Cliente")">Pesquisa Cliente</a></li>
+                    <li class="@Html.IsSelected(action: "CadastroCliente")"><a href="@Url.Action("CadastroCliente", "Cliente")">Cadastro de Cliente</a></li>
+
+                </ul>
+            </li>
+
+            <li class="@Html.IsSelected(controller: "Produto")">
+                <a href="#"><i class="fa fa-product-hunt"></i> <span class="nav-label" data-i18n="nav.forms">Menu Produto</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Produto", cssClass: "in")">
+                    <li class="@Html.IsSelected(action: "ConsultaProduto")"><a href="@Url.Action("ConsultaProduto", "Produto")">Consulta/Editar Produto</a></li>
+         
+                    <li class="@Html.IsSelected(action: "CadastroProduto")"><a href="@Url.Action("CadastroProduto", "Produto")">Cadastro de Produto</a></li>
+
+                </ul>
+            </li>
+
+            <li class="@Html.IsSelected(controller: "Orcamento")">
+                <a href="#"><i class="fa fa-money"></i> <span class="nav-label" data-i18n="nav.forms">Menu Orçamento</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Orcamento", cssClass: "in")">
+                    <li class="@Html.IsSelected(action: "ConsultaOrcamento")"><a href="@Url.Action("ConsultaOrcamento", "Orcamento")">Consulta/Editar Orçamento</a></li>
+                    
+                    <li class="@Html.IsSelected(action: "CadastroOrcamento")"><a href="@Url.Action("CadastroOrcamento", "Orcamento")">Cadastro de Orçamento</a></li>
+
+                </ul>
+            </li>
+
+            <li class="@Html.IsSelected(controller: "Graphs")">
+                <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label" data-i18n="nav.graphs">Gráficos</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Graphs", cssClass: "in")">
+                    <li class="@Html.IsSelected(action: "Chartist")"><a href="@Url.Action("Chartist", "Graphs")">Clientes/Produtos</a></li>
+           
+                </ul>
+            </li>
+          
+           
+            
+           
+          
+        </ul>
+    </div>
+</nav>
